@@ -1,0 +1,29 @@
+<section class="body">
+
+    <div class="login">
+
+
+        <mat-spinner *ngIf="loading" class="spiner" diameter="50"></mat-spinner>
+
+
+        <form *ngIf="!loading" (ngSubmit)="login()" [formGroup]="form">
+
+            <h1>Inicio de sesión</h1>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Documento</mat-label>
+                <input matInput formControlName="usuario">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Contraseña</mat-label>
+                <input type="password" matInput formControlName="clave">
+            </mat-form-field>
+
+            <br>
+
+            <button [disabled]="form.invalid" type="submit" mat-raised-button color="primary">Iniciar Sesión</button>
+        </form>
+    </div>
+
+</section>
